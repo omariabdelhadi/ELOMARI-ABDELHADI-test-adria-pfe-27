@@ -1,0 +1,23 @@
+package com.abdelhadielomari.transactionservice.entities;
+
+
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import lombok.*;
+import java.math.BigDecimal;
+import java.time.Instant;
+import java.util.UUID;
+
+@Entity
+@Data @NoArgsConstructor @AllArgsConstructor @Builder
+public class Transaction {
+    @Id
+    private UUID id;
+    private UUID accountId;
+    private BigDecimal amount;
+    private String currency;
+    private String merchantCategory;
+    private String country;
+    private Instant createdAt;
+}
